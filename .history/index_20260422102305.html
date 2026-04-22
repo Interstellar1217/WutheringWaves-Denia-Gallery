@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denia Photo Wall</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
+</head>
+<body>
+    <header>
+        <h1>Denia Photo Wall</h1>
+        <p>鸣潮达尼娅高清图片展</p>
+        <div id="music-player-container">
+            <button id="play-music-btn">🎵 播放背景音乐</button>
+            <div id="music-player"></div>
+        </div>
+    </header>
+
+    <main>
+        <div id="gallery-container" class="gallery"></div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close">&times;</span>
+            <button class="prev">&lt;</button>
+            <img src="" alt="" class="lightbox-image">
+            <button class="next">&gt;</button>
+            <div class="lightbox-info">
+                <p class="artist"></p>
+                <p class="pixiv-link"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Denia Photo Wall | 图片来源于Pixiv，仅供学习交流，侵删</p>
+    </footer>
+
+    <script src="assets/js/music.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

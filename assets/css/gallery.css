@@ -1,0 +1,121 @@
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: white;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item .item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .item-info {
+    opacity: 1;
+}
+
+.item-info .artist-name {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.item-info .pixiv-id {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Lazy Loading */
+.gallery-item img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item img.lazy.loaded {
+    opacity: 1;
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .gallery-item .item-info {
+        padding: 0.8rem;
+    }
+    
+    .item-info .artist-name {
+        font-size: 0.9rem;
+    }
+    
+    .item-info .pixiv-id {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}

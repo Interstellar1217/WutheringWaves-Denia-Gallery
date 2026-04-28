@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(dir C:\\\\Users\\\\Interstellar\\\\Documents\\\\GitHub\\\\WutheringWaves-Denia-Gallery\\\\public\\\\images\\\\full *)"
+    ]
+  }
+}

@@ -11,6 +11,8 @@
   --gold-bright: #d8b175;
   --teal: #6b4a8a;
   --teal-soft: #9b6fb8;
+  --purple: #8b5cf6;
+  --purple-bright: #a78bfa;
   --line: rgba(183, 138, 75, 0.25);
   --text-main: #f0e8f5;
   --text-muted: #b8aec9;
@@ -30,7 +32,7 @@ body {
   color: var(--text-main);
   background:
     linear-gradient(rgba(13, 10, 20, 0.65), rgba(18, 14, 28, 0.72)),
-    url('/images/full/HEVHeRObYAwI-OI.jpg') center / cover no-repeat fixed;
+    url('/WutheringWaves-Denia-Gallery/images/full/HEVHeRObYAwI-OI.jpg') center / cover no-repeat fixed;
 }
 
 body::before {
@@ -57,6 +59,64 @@ body::after {
 }
 
 .app-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem 2.2rem;
+}
+
+/* Main Navigation */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: rgba(13, 10, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-brand a {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--paper);
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--gold), var(--purple-bright));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--paper);
+  background: rgba(139, 92, 246, 0.15);
+  border-color: var(--purple);
+}
+
+.gallery-page {
   position: relative;
   z-index: 1;
   max-width: 1400px;
@@ -494,8 +554,206 @@ body::after {
 @media (max-width: 640px) {
   body {
     background: linear-gradient(rgba(13, 10, 20, 0.72), rgba(18, 14, 28, 0.78)),
-    url('/images/full/HEVHeRObYAwI-OI.jpg') center / cover no-repeat fixed;
+    url('/WutheringWaves-Denia-Gallery/images/full/HEVHeRObYAwI-OI.jpg') center / cover no-repeat fixed;
   }
   .app-shell { padding: 0.7rem 0.5rem 1.4rem; }
   .hero { padding: 1rem; }
+}
+
+/* Profile Page */
+.profile-page {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.profile-page .lang-switch-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(var(--panel-rgb), calc(var(--panel-alpha) + 0.08)), rgba(18, 26, 27, calc(var(--panel-alpha) + 0.08)));
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar-frame {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--teal));
+  padding: 4px;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(13, 10, 20, 0.9);
+  display: grid;
+  place-items: center;
+  color: var(--paper);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0.5rem;
+}
+
+.rarity-badge {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color: #1a0f00;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--bg-panel);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0;
+  color: var(--paper);
+  text-shadow: 0 2px 20px rgba(139, 92, 246, 0.4);
+}
+
+.profile-subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--purple-bright);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-section {
+  background: linear-gradient(145deg, rgba(var(--panel-rgb), var(--panel-alpha)), rgba(18, 27, 28, var(--panel-alpha)));
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  color: var(--paper);
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.profile-text {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-card {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  background: rgba(139, 92, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-card {
+  background: rgba(13, 10, 20, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.skill-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--purple-bright);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.skill-desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .profile-title {
+    font-size: 1.8rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-page {
+    padding: 1rem 0.75rem 2rem;
+  }
 }

@@ -288,9 +288,25 @@ export default function Gallery() {
   const currentLightboxImage = lightboxIndex >= 0 ? displayImages[lightboxIndex] : null;
 
   function onCardPointerDown(event, itemKey) {
+    // 非鼠标左键不处理
     if (event.button !== 0 && event.pointerType === 'mouse') return;
+    
+    // 移动端触摸：禁用拖拽，只允许滚动和点击
+    if (event.pointerType === 'touch') return;
+    
+    // 鼠标设备：启用拖拽
     const current = dragOffsets[itemKey] || { x: 0, y: 0 };
-    dragRef.current = { key: itemKey, startX: event.clientX, startY: event.clientY, originX: current.x, originY: current.y, moved: false, pointerId: event.pointerId };
+    
+    dragRef.current = { 
+      key: itemKey, 
+      startX: event.clientX, 
+      startY: event.clientY, 
+      originX: current.x, 
+      originY: current.y, 
+      moved: false, 
+      pointerId: event.pointerId
+    };
+    
     event.currentTarget.setPointerCapture(event.pointerId);
     event.currentTarget.closest('.gallery-card')?.classList.add('dragging');
   }
@@ -298,24 +314,43 @@ export default function Gallery() {
   function onCardPointerMove(event) {
     const drag = dragRef.current;
     if (!drag) return;
+    
     const dx = event.clientX - drag.startX;
     const dy = event.clientY - drag.startY;
+    
+    // 拖拽处理（仅鼠标）
     if (Math.abs(dx) + Math.abs(dy) > 4) drag.moved = true;
-    setDragOffsets((prev) => ({ ...prev, [drag.key]: { x: Math.round(drag.originX + dx), y: Math.round(drag.originY + dy) } }));
+    setDragOffsets((prev) => ({ 
+      ...prev, 
+      [drag.key]: { 
+        x: Math.round(drag.originX + dx), 
+        y: Math.round(drag.originY + dy) 
+      } 
+    }));
   }
 
   function onCardPointerUp(event) {
     const drag = dragRef.current;
     if (!drag) return;
-    if (drag.moved) recentDragRef.current = { key: drag.key, time: Date.now() };
-    try { event.currentTarget.releasePointerCapture(drag.pointerId); } catch {}
+    
+    if (drag.moved) {
+      recentDragRef.current = { key: drag.key, time: Date.now() };
+    }
+    
+    try { 
+      event.currentTarget.releasePointerCapture(drag.pointerId); 
+    } catch {}
+    
     dragRef.current = null;
     event.currentTarget.closest('.gallery-card')?.classList.remove('dragging');
   }
 
   function openLightbox(itemKey) {
     const recent = recentDragRef.current;
-    if (recent.key === itemKey && Date.now() - recent.time < 250) return;
+    
+    // 拖拽后 300ms 内不打开灯箱（给滚动留出时间）
+    if (recent.key === itemKey && Date.now() - recent.time < 300) return;
+    
     const index = displayImages.findIndex((item) => getItemKey(item) === itemKey);
     if (index >= 0) setLightboxIndex(index);
   }

@@ -162,6 +162,10 @@ export default function Gallery() {
   const recentDragRef = useRef({ key: '', time: 0 });
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 25;
+  const [galleryRef, setGalleryRef] = useState(null);
+
   useEffect(() => {
     localStorage.setItem('denia-lang', lang);
   }, [lang]);
@@ -186,6 +190,12 @@ export default function Gallery() {
     artwork: lang === 'zh' ? 'Pixiv' : 'Pixiv',
     file: lang === 'zh' ? '文件' : 'File',
     langSwitch: lang === 'zh' ? 'English' : '中文',
+    page: lang === 'zh' ? '页' : 'Page',
+    of: lang === 'zh' ? ' / ' : ' of ',
+    prevPage: lang === 'zh' ? '上一页' : 'Previous',
+    nextPage: lang === 'zh' ? '下一页' : 'Next',
+    sortOrder: lang === 'zh' ? '降序' : 'Desc',
+    sortAsc: lang === 'zh' ? '升序' : 'Asc',
   };
 
   useEffect(() => {
@@ -217,6 +227,7 @@ export default function Gallery() {
           const pixivId = extractPixivId(item.full);
           const artistId = item.artistId || '';
           const artistUrl = artistId ? buildPixivUserUrl(artistId) : '';
+          const isPixiv = !!pixivId;
           return {
             id: index,
             full: item.full,
@@ -224,7 +235,7 @@ export default function Gallery() {
             artistId,
             artistUrl,
             pixivId: pixivId || '',
-            address: item.address || buildPixivUrl(pixivId),
+            address: isPixiv ? (item.address || buildPixivUrl(pixivId)) : (item.address || ''),
             tags: safeArray(item.tags),
             createdAt: item.createdAt || '1970-01-01',
             sourceOrder: index,
@@ -255,15 +266,37 @@ export default function Gallery() {
       case 'pixiv': output = output.sort((a, b) => (parseInt(b.pixivId || '0') - parseInt(a.pixivId || '0')) * direction); break;
       default:
         output = output.sort((a, b) => {
-          const aIsOfficial = a.tags.includes('official');
-          const bIsOfficial = b.tags.includes('official');
-          if (aIsOfficial && !bIsOfficial) return -1;
-          if (!aIsOfficial && bIsOfficial) return 1;
-          return a.sourceOrder - b.sourceOrder;
+          const aOfficial = a.tags.includes('official');
+          const bOfficial = b.tags.includes('official');
+          const aFanart = a.tags.includes('fanart');
+          const bFanart = b.tags.includes('fanart');
+
+          if (aOfficial && !bOfficial) return -1;
+          if (!aOfficial && bOfficial) return 1;
+          if (aFanart && !bFanart) return -1;
+          if (!aFanart && bFanart) return 1;
+
+          return new Date(a.createdAt) - new Date(b.createdAt);
         });
     }
     return output;
   }, [images, searchTerm, tagFilter, sortMode, sortOrder]);
+
+  const totalPages = Math.max(1, Math.ceil(displayImages.length / itemsPerPage));
+  const currentPageClamped = Math.min(Math.max(1, currentPage), totalPages);
+  const paginatedImages = useMemo(() => {
+    const start = (currentPageClamped - 1) * itemsPerPage;
+    return displayImages.slice(start, start + itemsPerPage);
+  }, [displayImages, currentPageClamped, itemsPerPage]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, tagFilter, sortMode, sortOrder]);
+
+  function goToPage(page) {
+    setCurrentPage(Math.min(Math.max(1, page), totalPages));
+    galleryRef?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   useEffect(() => {
     function onKeyDown(event) {
@@ -403,7 +436,7 @@ export default function Gallery() {
               <option value="pixiv">{t.sortPixiv}</option>
             </select>
             <button onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')} style={{ cursor: 'pointer', border: '1px solid rgba(125, 166, 167, 0.35)', background: 'rgba(16, 24, 25, 0.8)', color: 'var(--paper)', borderRadius: '10px', padding: '0.62rem 0.75rem', fontSize: '0.95rem', minWidth: '80px' }}>
-              {sortOrder === 'desc' ? '降序' : '升序'}
+              {sortOrder === 'desc' ? t.sortOrder : t.sortAsc}
             </button>
           </div>
         </section>
@@ -421,8 +454,8 @@ export default function Gallery() {
         {loading ? <LoadingSpinner /> : null}
         {!loading && displayImages.length === 0 ? <div className="status-box">{t.noMatch}</div> : null}
 
-        <section className="gallery">
-          {displayImages.map((item, idx) => {
+        <section className="gallery" ref={setGalleryRef}>
+          {paginatedImages.map((item, idx) => {
             const key = getItemKey(item);
             const offset = dragOffsets[key] || { x: 0, y: 0 };
             return (
@@ -466,6 +499,45 @@ export default function Gallery() {
             );
           })}
         </section>
+
+        {!loading && displayImages.length > 0 && totalPages > 1 && (
+          <div className="pagination">
+            <p className="pagination-info">
+              {t.page} {currentPageClamped}{t.of}{totalPages}
+              {itemsPerPage < displayImages.length && ` · ${t.summary(paginatedImages.length, displayImages.length)}`}
+            </p>
+            <div className="pagination-controls">
+              <button
+                onClick={() => goToPage(currentPageClamped - 1)}
+                disabled={currentPageClamped <= 1}
+                className="pagination-btn"
+              >
+                ‹ {t.prevPage}
+              </button>
+              <div className="pagination-input">
+                <input
+                  type="number"
+                  min={1}
+                  max={totalPages}
+                  value={currentPageClamped}
+                  onChange={(e) => {
+                    const val = parseInt(e.target.value) || 1;
+                    goToPage(val);
+                  }}
+                  onClick={(e) => e.target.select()}
+                />
+                <span>/ {totalPages}</span>
+              </div>
+              <button
+                onClick={() => goToPage(currentPageClamped + 1)}
+                disabled={currentPageClamped >= totalPages}
+                className="pagination-btn"
+              >
+                {t.nextPage} ›
+              </button>
+            </div>
+          </div>
+        )}
       </section>
 
       <div className={`lightbox ${lightboxIndex >= 0 ? 'open' : ''}`} onClick={() => setLightboxIndex(-1)}>
@@ -487,8 +559,10 @@ export default function Gallery() {
               <p><strong>{t.file}:</strong> {currentLightboxImage.full}</p>
               <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
                 <button className="download-btn" onClick={() => handleDownload(currentLightboxImage.full)}>⬇ {t.downloading}</button>
-                {currentLightboxImage.address && (
+                {currentLightboxImage.address ? (
                   <a href={currentLightboxImage.address} target="_blank" rel="noreferrer" className="source-btn">🔗 {t.source}</a>
+                ) : (
+                  <span className="source-btn" style={{ opacity: 0.5, cursor: 'default' }}>🔗 Unknown</span>
                 )}
               </div>
             </div>

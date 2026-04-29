@@ -1,226 +1,670 @@
 [
   {
-    "full": "2069d2bacc454adc88ec161cb658b53020260326.png",
-    "thumbnail": "thumbs/2069d2bacc454adc88ec161cb658b53020260326_thumb.webp",
-    "artistId": "",
-    "tags": ["denia", "official"],
-    "createdAt": "2026-04-26"
-  },
-  {
-    "full": "38c4285acb774d84ac8dfe1fdd37ae0a20260424.jpeg",
-    "thumbnail": "thumbs/38c4285acb774d84ac8dfe1fdd37ae0a20260424_thumb.webp",
-    "artistId": "",
-    "tags": ["denia", "official"],
-    "createdAt": "2026-04-26"
-  },
-  {
     "full": "c5cab3f24f8e49e9a925f7ba4b92798a20260324.jpg",
     "thumbnail": "thumbs/c5cab3f24f8e49e9a925f7ba4b92798a20260324_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "official"],
-    "createdAt": "2026-04-26"
-  },
-  {
-    "full": "d978f596bd83414ba8401e32f44ed59020260420.gif",
-    "thumbnail": "thumbs/d978f596bd83414ba8401e32f44ed59020260420_thumb.webp",
-    "artistId": "",
-    "tags": ["denia", "official"],
+    "tags": [
+      "denia",
+      "official"
+    ],
     "createdAt": "2026-04-20"
   },
   {
     "full": "HEVHeRMbYAYmO3N.jpg",
     "thumbnail": "thumbs/HEVHeRMbYAYmO3N_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "official"],
-    "createdAt": "2026-04-26"
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-20"
   },
   {
     "full": "HEVHeRObYAwI-OI.jpg",
     "thumbnail": "thumbs/HEVHeRObYAwI-OI_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "official", "background"],
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "d7889e8bd72f62d21a262c86059ece731955897084.jpg",
+    "thumbnail": "thumbs/d7889e8bd72f62d21a262c86059ece731955897084_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "d978f596bd83414ba8401e32f44ed59020260420.gif",
+    "thumbnail": "thumbs/d978f596bd83414ba8401e32f44ed59020260420_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "2069d2bacc454adc88ec161cb658b53020260326.png",
+    "thumbnail": "thumbs/2069d2bacc454adc88ec161cb658b53020260326_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-26"
+  },
+  {
+    "full": "38c4285acb774d84ac8dfe1fdd37ae0a20260424.jpeg",
+    "thumbnail": "thumbs/38c4285acb774d84ac8dfe1fdd37ae0a20260424_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-26"
+  },
+  {
+    "full": "4f58f4a2bec5d9b8219902b729024ad71955897084.png",
+    "thumbnail": "thumbs/4f58f4a2bec5d9b8219902b729024ad71955897084_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "4077c3fe3de40de08a3cab3f6d408de01955897084.jpg",
+    "thumbnail": "thumbs/4077c3fe3de40de08a3cab3f6d408de01955897084_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "official"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "142848923_p0.jpg",
+    "thumbnail": "thumbs/142848923_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "143586908_p0.png",
+    "thumbnail": "thumbs/143586908_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "142783117_p0.jpg",
+    "thumbnail": "thumbs/142783117_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart",
+      "SD"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "142519036_p0.jpg",
+    "thumbnail": "thumbs/142519036_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "142913433_p0.png",
+    "thumbnail": "thumbs/142913433_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "142932578_p0.jpg",
+    "thumbnail": "thumbs/142932578_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-20"
+  },
+  {
+    "full": "143518930_p0.jpg",
+    "thumbnail": "thumbs/143518930_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-26"
+  },
+  {
+    "full": "143989764_p0.png",
+    "thumbnail": "thumbs/143989764_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-26"
   },
   {
     "full": "142499434_p0.png",
     "thumbnail": "thumbs/142499434_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "142572257_p0.jpg",
     "thumbnail": "thumbs/142572257_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart",
+      "SD"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "142781895_p0.png",
     "thumbnail": "thumbs/142781895_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "142845850_p0.png",
     "thumbnail": "thumbs/142845850_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
-    "createdAt": "2026-04-28"
-  },
-  {
-    "full": "142848923_p0.jpg",
-    "thumbnail": "thumbs/142848923_p0_thumb.webp",
-    "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "142859266_p0.png",
     "thumbnail": "thumbs/142859266_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "142928593_p0.jpg",
     "thumbnail": "thumbs/142928593_p0_thumb.webp",
     "artistId": "113703823",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143006150_p0.jpg",
     "thumbnail": "thumbs/143006150_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143012160_p0.jpg",
     "thumbnail": "thumbs/143012160_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143029807_p0.png",
     "thumbnail": "thumbs/143029807_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143068854_p0.png",
     "thumbnail": "thumbs/143068854_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143192039_p0.jpg",
     "thumbnail": "thumbs/143192039_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143216855_p0.png",
     "thumbnail": "thumbs/143216855_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143220244_p0.png",
     "thumbnail": "thumbs/143220244_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143230612_p0.png",
     "thumbnail": "thumbs/143230612_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143240164_p0.jpg",
     "thumbnail": "thumbs/143240164_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143308227_p0.jpg",
     "thumbnail": "thumbs/143308227_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143361759_p0.jpg",
     "thumbnail": "thumbs/143361759_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143486795_p0.jpg",
     "thumbnail": "thumbs/143486795_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
-  },
-  {
-    "full": "143518930_p0.jpg",
-    "thumbnail": "thumbs/143518930_p0_thumb.webp",
-    "artistId": "",
-    "tags": ["denia", "fanart"],
-    "createdAt": "2026-04-26"
   },
   {
     "full": "143584004_p0.jpg",
     "thumbnail": "thumbs/143584004_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
-    "createdAt": "2026-04-28"
-  },
-  {
-    "full": "143586908_p0.png",
-    "thumbnail": "thumbs/143586908_p0_thumb.webp",
-    "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143664598_p0.jpg",
     "thumbnail": "thumbs/143664598_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143674473_p0.jpg",
     "thumbnail": "thumbs/143674473_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
     "full": "143917339_p0.png",
     "thumbnail": "thumbs/143917339_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
+    "tags": [
+      "denia",
+      "fanart"
+    ],
     "createdAt": "2026-04-28"
   },
   {
-    "full": "143989764_p0.png",
-    "thumbnail": "thumbs/143989764_p0_thumb.webp",
+    "full": "142887548_p0.jpg",
+    "thumbnail": "thumbs/142887548_p0_thumb.webp",
     "artistId": "",
-    "tags": ["denia", "fanart"],
-    "createdAt": "2026-04-26"
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "142947890_p0.jpg",
+    "thumbnail": "thumbs/142947890_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart",
+      "SD"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "143268522_p0.jpg",
+    "thumbnail": "thumbs/143268522_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "143280953_p0.jpg",
+    "thumbnail": "thumbs/143280953_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart",
+      "SD"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "143396470_p0.jpg",
+    "thumbnail": "thumbs/143396470_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "144031581_p0.png",
+    "thumbnail": "thumbs/144031581_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "144075404_p0.png",
+    "thumbnail": "thumbs/144075404_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "144111480_p0.jpg",
+    "thumbnail": "thumbs/144111480_p0_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "fanart"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HE1kaYwbUAAO2gY.jpg",
+    "thumbnail": "thumbs/HE1kaYwbUAAO2gY_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HE95gKPbMAAunZ-.jpg",
+    "thumbnail": "thumbs/HE95gKPbMAAunZ-_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HEPo3aSa4AAF4zJ.jpg",
+    "thumbnail": "thumbs/HEPo3aSa4AAF4zJ_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others",
+      "SD"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HEvf21Ea0AAW3te.jpg",
+    "thumbnail": "thumbs/HEvf21Ea0AAW3te_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HFHfvpOaoAEWid1.jpg",
+    "thumbnail": "thumbs/HFHfvpOaoAEWid1_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HFlEqmxaUAAQsRY.jpg",
+    "thumbnail": "thumbs/HFlEqmxaUAAQsRY_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HFxvqdxbIAAuOe5.jpg",
+    "thumbnail": "thumbs/HFxvqdxbIAAuOe5_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others",
+      "SD"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HG0StNia8AANygl.jpg",
+    "thumbnail": "thumbs/HG0StNia8AANygl_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others",
+      "SD"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HG2JhpBbQAA8J1g.jpg",
+    "thumbnail": "thumbs/HG2JhpBbQAA8J1g_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGbQGehakAAHH2y.jpg",
+    "thumbnail": "thumbs/HGbQGehakAAHH2y_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGGUsuma4AADtjy.jpg",
+    "thumbnail": "thumbs/HGGUsuma4AADtjy_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGH8k08a0AA3rJc.jpg",
+    "thumbnail": "thumbs/HGH8k08a0AA3rJc_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGHGrL0bEAEAYZ-.jpg",
+    "thumbnail": "thumbs/HGHGrL0bEAEAYZ-_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGHJJQ8b0AAswnn.jpg",
+    "thumbnail": "thumbs/HGHJJQ8b0AAswnn_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGPdaFyaoAAmn_2.jpg",
+    "thumbnail": "thumbs/HGPdaFyaoAAmn_2_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGQ6QNrbQAAsBMD.jpg",
+    "thumbnail": "thumbs/HGQ6QNrbQAAsBMD_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGVkxP-boAAcIZO.jpg",
+    "thumbnail": "thumbs/HGVkxP-boAAcIZO_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others",
+      "SD"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HGWG909akAAQE8k.jpg",
+    "thumbnail": "thumbs/HGWG909akAAQE8k_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
+  },
+  {
+    "full": "HHCdxNvbcAAGGGp.jpg",
+    "thumbnail": "thumbs/HHCdxNvbcAAGGGp_thumb.webp",
+    "artistId": "",
+    "tags": [
+      "denia",
+      "others"
+    ],
+    "createdAt": "2026-04-29"
   }
 ]

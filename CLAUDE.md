@@ -164,16 +164,52 @@ npm run thumbs           # 生成缩略图 (需要 sharp)
 
 ### 背景图片
 
-页面背景设置于 `styles.css` → `body`：
+页面背景设置于 `styles.css` → `body`，使用相对路径：
 ```css
-background: url('/WutheringWaves-Denia-Gallery/images/full/HEVHeRObYAwI-OI.jpg')
+background: url('../public/images/full/HEVHeRObYAwI-OI.jpg');
 ```
 
 ---
 
 ## 注意事项
 
-- `BASE_PATH = '/WutheringWaves-Denia-Gallery/'` 在 Gallery.jsx 中用于 GitHub Pages 资源加载
+### 路径规范（重要）
+
+**所有资源路径必须使用相对路径**，以确保 GitHub Pages 部署正确：
+
+1. **JavaScript/JSX 文件**：使用 `import.meta.env.BASE_URL` 获取基础路径
+   ```javascript
+   const BASE_PATH = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+   // 使用时：`${BASE_PATH}/images/full/image.jpg`
+   ```
+
+2. **CSS 文件**：使用相对路径，不要用绝对路径（`/` 开头）或完整的子目录路径
+   ```css
+   /* 正确 */
+   background: url('../public/images/full/image.jpg');
+   
+   /* 错误 - Vite 无法处理 */
+   background: url('/WutheringWaves-Denia-Gallery/images/full/image.jpg');
+   ```
+
+3. **HTML 文件**：入口脚本使用相对路径
+   ```html
+   <!-- 正确 -->
+   <script type="module" src="./src/main.jsx"></script>
+   
+   <!-- 错误 - 会导致 404 -->
+   <script type="module" src="/src/main.jsx"></script>
+   ```
+
+### GitHub Pages 部署
+
+- **基础路径配置**：`vite.config.js` 中设置 `base: '/WutheringWaves-Denia-Gallery/'`
+- **路由**：必须使用 `HashRouter`（不能用 `BrowserRouter`）
+- **部署流程**：push 到 `main` 分支 → GitHub Actions 自动构建并部署
+- **本地测试**：运行 `npm run build` 后用 `npm run preview` 预览生产构建
+
+### 其他注意事项
+
 - 拖拽位置按图片 key 持久化至 localStorage (`denia-drag-positions`)
 - 语言偏好持久化至 localStorage (`denia-lang`)
 - 缺失图片会 fallback 到 SVG 占位图

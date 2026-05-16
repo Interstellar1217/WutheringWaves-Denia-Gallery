@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 const DRAG_POSITIONS_KEY = 'denia-drag-positions';
-const BASE_PATH = '/WutheringWaves-Denia-Gallery';
+const BASE_PATH = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 
 function safeArray(value) {
   return Array.isArray(value) ? value : [];

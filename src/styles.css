@@ -684,7 +684,7 @@ body::after {
   top: 0;
   width: 50vw;
   height: 100vh;
-  background: url('/WutheringWaves-Denia-Gallery/images/full/HEVHeRObYAwI-OI.jpg') center / cover no-repeat;
+  background: url('../public/images/full/HEVHeRObYAwI-OI.jpg') center / cover no-repeat;
   z-index: 0;
 }
 

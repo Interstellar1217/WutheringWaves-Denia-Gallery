@@ -163,7 +163,7 @@ export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 25;
+  const itemsPerPage = 30;
   const [galleryRef, setGalleryRef] = useState(null);
 
   useEffect(() => {
@@ -270,6 +270,12 @@ export default function Gallery() {
           const bOfficial = b.tags.includes('official');
           const aFanart = a.tags.includes('fanart');
           const bFanart = b.tags.includes('fanart');
+          const aSD = a.tags.includes('SD');
+          const bSD = b.tags.includes('SD');
+
+          // SD 标签的图片排到最后
+          if (!aSD && bSD) return -1;
+          if (aSD && !bSD) return 1;
 
           if (aOfficial && !bOfficial) return -1;
           if (!aOfficial && bOfficial) return 1;

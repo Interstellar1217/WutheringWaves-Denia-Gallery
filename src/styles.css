@@ -648,135 +648,218 @@ body::after {
   .nav-brand a { font-size: 1.2rem; }
 }
 
-/* Profile Page */
+/* ========== Profile Page - Split Screen Layout ========== */
+
 .profile-page {
   position: relative;
-  z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
+  min-height: 100vh;
 }
 
 .profile-page .lang-switch-btn {
   position: fixed;
   top: 1rem;
   right: 1rem;
-}
-
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(var(--panel-rgb), calc(var(--panel-alpha) + 0.08)), rgba(18, 26, 27, calc(var(--panel-alpha) + 0.08)));
-  border-radius: 20px;
-  border: 1px solid var(--line);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
-  margin-bottom: 1.5rem;
-}
-
-.profile-avatar {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.avatar-frame {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--purple), var(--teal));
-  padding: 4px;
-  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
-}
-
-.avatar-placeholder {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: rgba(13, 10, 20, 0.9);
-  display: grid;
-  place-items: center;
+  z-index: 1000;
+  background: rgba(13, 10, 20, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(183, 138, 75, 0.4);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
   color: var(--paper);
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.2;
-  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.rarity-badge {
+.profile-page .lang-switch-btn:hover {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: var(--purple);
+}
+
+/* 左侧固定图片区 */
+.profile-visual {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  background: url('/WutheringWaves-Denia-Gallery/images/full/HEVHeRObYAwI-OI.jpg') center / cover no-repeat;
+  z-index: 0;
+}
+
+.profile-visual::after {
+  content: '';
   position: absolute;
-  bottom: -5px;
-  right: -5px;
-  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-  color: #1a0f00;
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  border: 2px solid var(--bg-panel);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(13, 10, 20, 0.3) 0%,
+    rgba(13, 10, 20, 0.5) 70%,
+    rgba(13, 10, 20, 0.85) 100%);
+  pointer-events: none;
 }
 
-.profile-info {
-  flex: 1;
+/* 右侧滚动内容区 */
+.profile-content-scroll {
+  margin-left: 50vw;
+  min-height: 100vh;
+  background: linear-gradient(to bottom,
+    rgba(13, 10, 20, 0.95),
+    rgba(21, 16, 31, 0.98));
+  padding: 2rem 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-.profile-title {
+/* 角色标题卡片 */
+.profile-header-card {
+  background: linear-gradient(135deg,
+    rgba(139, 92, 246, 0.15),
+    rgba(183, 138, 75, 0.1));
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.profile-title-section h1 {
   font-family: 'Cinzel', serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   margin: 0;
   color: var(--paper);
-  text-shadow: 0 2px 20px rgba(139, 92, 246, 0.4);
+  text-shadow: 0 2px 30px rgba(139, 92, 246, 0.5);
+  letter-spacing: 0.05em;
 }
 
 .profile-subtitle {
   margin: 0.5rem 0 0;
   color: var(--purple-bright);
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.profile-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.profile-affiliation {
+  margin: 0.25rem 0 0;
+  color: var(--teal-soft);
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
-.profile-section {
-  background: linear-gradient(145deg, rgba(var(--panel-rgb), var(--panel-alpha)), rgba(18, 27, 28, var(--panel-alpha)));
-  border: 1px solid rgba(139, 92, 246, 0.28);
-  border-radius: 16px;
-  padding: 1.25rem;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+.profile-quote-box {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: rgba(13, 10, 20, 0.6);
+  border-radius: 12px;
+  border-left: 3px solid var(--gold);
 }
 
-.section-title {
+.quote-mark {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.75rem;
+  font-size: 2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.profile-quote {
+  margin: 0;
+  color: var(--paper-soft);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* 时间线样式 */
+.profile-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.profile-timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom,
+    var(--gold) 0%,
+    var(--purple) 50%,
+    var(--teal) 100%);
+  opacity: 0.6;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 1.75rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  border: 2px solid rgba(183, 138, 75, 0.3);
+  box-shadow: 0 0 12px rgba(183, 138, 75, 0.5);
+}
+
+.timeline-content {
+  background: linear-gradient(145deg,
+    rgba(21, 16, 31, 0.8),
+    rgba(13, 10, 20, 0.9));
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
+  transform: translateX(4px);
+}
+
+.timeline-title {
   font-family: 'Cinzel', serif;
   color: var(--paper);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin: 0 0 1rem 0;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--gold-bright);
+}
+
+.timeline-body {
+  color: var(--text-main);
 }
 
 .profile-text {
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.8;
   font-size: 0.95rem;
+  margin: 0;
 }
 
+/* Stats Grid */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .stat-card {
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -785,63 +868,200 @@ body::after {
 }
 
 .stat-card:hover {
-  background: rgba(139, 92, 246, 0.2);
-  transform: translateY(-2px);
+  background: rgba(139, 92, 246, 0.22);
+  border-color: var(--purple);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
 }
 
 .stat-icon {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 .stat-label {
   color: var(--text-muted);
   font-size: 0.85rem;
   font-weight: 500;
+  text-align: center;
 }
 
+/* Skills List */
 .skills-list {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .skill-card {
-  background: rgba(13, 10, 20, 0.6);
+  background: rgba(13, 10, 20, 0.7);
   border: 1px solid rgba(139, 92, 246, 0.2);
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  transition: all 0.2s ease;
 }
 
-.skill-card h3 {
+.skill-card:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateX(4px);
+}
+
+.skill-card h4 {
   margin: 0 0 0.5rem 0;
   color: var(--purple-bright);
   font-size: 1rem;
   font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .skill-desc {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+
+/* 底部留白 */
+.profile-spacer {
+  height: 4rem;
+}
+
+/* ========== 响应式 ========== */
+
+@media (max-width: 1100px) {
+  .profile-content-scroll {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-visual {
+    width: 45vw;
+  }
+  .profile-content-scroll {
+    margin-left: 45vw;
+    padding: 1.5rem 1.5rem;
+  }
+  .profile-header-card {
+    padding: 1.5rem;
+  }
+  .profile-title-section h1 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .profile-header {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
+  .profile-page {
+    min-height: auto;
   }
 
-  .profile-title {
-    font-size: 1.8rem;
+  .profile-visual {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    min-height: 280px;
+  }
+
+  .profile-content-scroll {
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-header-card {
+    margin-top: -3rem;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-timeline {
+    padding-left: 1.25rem;
+  }
+
+  .profile-timeline::before {
+    left: 3px;
+  }
+
+  .timeline-item {
+    padding-left: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .timeline-marker {
+    left: -1.25rem;
+    width: 10px;
+    height: 10px;
+  }
+
+  .profile-title-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .profile-subtitle {
+    font-size: 1rem;
+  }
+
+  .stats-grid {
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-icon {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-header-card {
+    padding: 1.25rem;
+  }
+
+  .profile-title-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .profile-quote-box {
+    padding: 0.75rem;
+  }
+
+  .timeline-content {
+    padding: 1rem;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
   }
 
   .stats-grid {
     grid-template-columns: 1fr;
   }
 
-  .profile-page {
-    padding: 1rem 0.75rem 2rem;
+  .stat-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .stat-icon {
+    flex-shrink: 0;
+  }
+
+  .stat-label {
+    text-align: left;
+  }
+
+  .lang-switch-btn {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
   }
 }

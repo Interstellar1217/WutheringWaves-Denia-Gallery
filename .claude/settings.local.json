@@ -2,7 +2,21 @@
   "permissions": {
     "allow": [
       "Bash(npm run *)",
-      "Bash(dir C:\\\\Users\\\\Interstellar\\\\Documents\\\\GitHub\\\\WutheringWaves-Denia-Gallery\\\\public\\\\images\\\\full *)"
+      "Bash(dir C:\\\\Users\\\\Interstellar\\\\Documents\\\\GitHub\\\\WutheringWaves-Denia-Gallery\\\\public\\\\images\\\\full *)",
+      "Bash(node -e ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git reset *)",
+      "WebSearch",
+      "Bash(netstat -ano)",
+      "Bash(findstr :5173 :5174 :5175 :5176 :5177 :5178 :5179)",
+      "Bash(Get-NetTCPConnection -LocalPort 5173,5174,5175,5176,5177,5178,5179 -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object LocalPort, OwningProcess)",
+      "Bash(tasklist)",
+      "Bash(findstr node *)",
+      "Bash(taskkill *)",
+      "WebFetch(domain:wiki.kurobbs.com)"
     ]
   }
 }

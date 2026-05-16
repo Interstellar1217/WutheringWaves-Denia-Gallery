@@ -1583,8 +1583,9 @@ body::after {
 
 .profile-v5 .profile-hero-full {
   position: relative;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 64px - 10px);
   min-height: 520px;
+  margin-top: 10px;
   overflow: hidden;
   cursor: pointer;
   display: grid;
@@ -1774,8 +1775,9 @@ body::after {
 
 @media (max-width: 900px) {
   .profile-v5 .profile-hero-full {
-    height: calc(100vh - 56px);
+    height: calc(100vh - 56px - 8px);
     min-height: 420px;
+    margin-top: 8px;
   }
 
   .profile-v5 .profile-rotary {
@@ -1961,20 +1963,45 @@ body::after {
 }
 
 @media (max-width: 900px) {
+  .profile-v5 .profile-showcase {
+    max-width: 100%;
+    padding: 1rem 0 1.6rem;
+  }
+
   .profile-v5 .profile-rotary {
-    grid-template-columns: 54px minmax(0, 1fr) 54px;
-    gap: 0.24rem;
+    display: block;
+    position: relative;
   }
 
   .profile-v5 .carousel-btn {
-    border-radius: 10px;
-    font-size: 1.6rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 46px;
+    border-radius: 0;
+    font-size: 1.5rem;
     background:
       linear-gradient(180deg, rgba(167, 139, 250, 0.3), rgba(111, 76, 182, 0.24)),
       rgba(14, 10, 23, 0.78);
+    z-index: 4;
+  }
+
+  .profile-v5 .carousel-btn.left {
+    left: 0;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .profile-v5 .carousel-btn.right {
+    right: 0;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
   }
 
   .profile-v5 .profile-stage-image {
     width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }

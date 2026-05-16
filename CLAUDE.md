@@ -1,5 +1,9 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+---
+
 **Denia Gallery** — 鸣潮（Wuthering Waves）3.3 版本五星热熔共鸣者达妮娅的同人画廊站点
 
 - **Live Site**: https://interstellar1217.github.io/WutheringWaves-Denia-Gallery/
@@ -75,9 +79,10 @@ npm run thumbs           # 生成缩略图 (需要 sharp)
 
 | 标签 | 说明 | 文件名特征 |
 |------|------|------------|
-| `official` | 官方图片 | 你明确指定的官图（哈希命名带时间戳、HEVHeR 前缀等） |
+| `official` | 官方图片 | 哈希命名 (如 `682188dfe9267daf644e4488cb7aeb03572486169.png`)、HEVHeR 前缀 |
 | `fanart` | Pixiv 同人 | 数字 + `_p` 开头，如 `143518930_p0.jpg` |
-| `others` | 其他来源 | X 平台、其他来源图片 |
+| `others` | 其他来源 | X 平台 (H 开头)、其他来源图片 |
+| `SD` | 低清缩放 | 标记需要排在末尾的图片 |
 
 ### Pixiv ID 自动识别
 
@@ -96,13 +101,16 @@ npm run thumbs           # 生成缩略图 (需要 sharp)
 - 使用 `HashRouter` 适配 GitHub Pages
 
 ### Gallery.jsx
-画廊主页面：
-- **筛选**: 按 Pixiv ID/标签搜索，标签芯片筛选
-- **排序**: 默认（官图→同人→日期，SD 标签排最后）、日期、Pixiv ID（升/降序切换）
-- **分页**: 每页 30 张
-- **拖拽卡片**: 鼠标拖拽，localStorage 持久化
-- **灯箱**: 键盘导航（方向键、ESC）、可缩放图片
-- **i18n**: 中英切换，localStorage 持久化
+画廊主页面，核心功能：
+
+| 功能 | 说明 |
+|------|------|
+| **筛选** | 按 Pixiv ID/标签搜索，标签芯片筛选 |
+| **排序** | 默认/日期/Pixiv ID（升/降序切换） |
+| **分页** | 每页 30 张 |
+| **拖拽卡片** | 鼠标拖拽重排，localStorage 持久化 |
+| **灯箱** | 键盘导航（方向键、ESC）、可缩放图片 |
+| **i18n** | 中英切换，localStorage 持久化 |
 
 核心函数：
 - `extractPixivId(filename)` — 提取 Pixiv ID
@@ -113,9 +121,8 @@ npm run thumbs           # 生成缩略图 (需要 sharp)
 
 ### Profile.jsx
 角色资料页：
-- **i18n**: 中英双语切换
+- **i18n**: 中英双语切换 (组件级 `t` 对象)
 - **Sections**: 属性、技能、背景故事、养成建议
-- 内容存储在组件级 `t` 对象 (zh/en 翻译)
 
 ---
 
@@ -151,11 +158,9 @@ npm run thumbs           # 生成缩略图 (需要 sharp)
 ### 排序逻辑
 
 默认排序（`sortMode: 'default'`）：
-1. **SD 标签图片** - 排到最后
-2. **官图** (`official` 标签) - 非 SD 在前
-3. **同人** (`fanart` 标签) - 非 SD 在前
-4. **其他** (`others` 标签) - 非 SD 在前
-5. 同类内按 `createdAt` 升序排列，SD 标签同类型内排末尾
+1. **非 SD 图片优先** — SD 标签排最后
+2. **类别顺序** — 官图 → 同人 → 其他
+3. **同类内** — 按 `createdAt` 升序，SD 在同类末尾
 
 ### 背景图片
 
@@ -173,6 +178,7 @@ background: url('/WutheringWaves-Denia-Gallery/images/full/HEVHeRObYAwI-OI.jpg')
 - 语言偏好持久化至 localStorage (`denia-lang`)
 - 缺失图片会 fallback 到 SVG 占位图
 - 触摸设备：滚动启用，拖拽禁用（仅鼠标支持拖拽）
+- 缩略图生成使用 Sharp，400px 宽度，WebP 格式，quality 80
 
 ---
 

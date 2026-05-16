@@ -1,0 +1,174 @@
+﻿{
+  "zh": {
+    "meta": {
+      "title": "达妮娅 Denia",
+      "subtitle": "星炬学院学生 · 5★ 热熔共鸣者",
+      "affiliation": "所属：残星会",
+      "element": "热熔",
+      "rarity": "5★",
+      "weapon": "音感仪",
+      "quote": "见到我很意外吗？哈哈，别紧张嘛，我说过我们会再见面的。"
+    },
+    "sections": [
+      {
+        "title": "关于达妮娅",
+        "cards": [
+          {
+            "heading": "星炬学院“优眠生”",
+            "text": "在星炬学院这座学府中，达妮娅几乎能在任何时间、任何地点打盹。即便被叫醒，她也常以平和态度回应。"
+          },
+          {
+            "heading": "食堂白金级会员",
+            "text": "她对食物有自己的偏好，却常对食堂产品表现出来者不拒的一面，甚至多次受邀参与宣传拍摄。"
+          },
+          {
+            "heading": "“课题救星”",
+            "text": "在虚质相关课题上，许多同学会向她求助。她常能给出方向，甚至协助补全测量数据。"
+          },
+          {
+            "heading": "家务能手？",
+            "text": "据学院检查数据统计，达妮娅在学生房间整洁度方面表现突出。"
+          }
+        ]
+      },
+      {
+        "title": "风格与设定",
+        "cards": [
+          {
+            "heading": "风格化设计",
+            "text": "锁链、手套和玩偶被她称作“风格化设计”，而颈部抑制设备则被称为“规矩”。"
+          },
+          {
+            "heading": "完美笑容",
+            "text": "温柔、友善、循循善诱，再加一点慵懒与调皮，构成了她标志性的笑容。"
+          },
+          {
+            "heading": "骗术师",
+            "text": "她随身携带的玩偶外观陈旧，布满手工修补痕迹。"
+          }
+        ]
+      },
+      {
+        "title": "补充档案",
+        "cards": [
+          {
+            "heading": "珍贵之物 ·「造梦者」",
+            "text": "用于制造巨大泡泡的装置。外形梦幻，比起传统武器更像是一件玩具。"
+          },
+          {
+            "heading": "达妮娅的喜好",
+            "text": "“我喜欢温柔却难懂的课、温暖甜甜的食物，还有那些不知所云的参考书籍。”"
+          },
+          {
+            "heading": "达妮娅的故事",
+            "text": "“学院登记的共鸣能力是制造可隔绝虚质并提供防护的泡泡。”"
+          },
+          {
+            "heading": "心声",
+            "text": "“你就偶尔，也试着信任我一下吧。”"
+          }
+        ]
+      }
+    ],
+    "sources": {
+      "title": "信息来源",
+      "items": [
+        {
+          "label": "Bilibili 动态",
+          "url": "https://www.bilibili.com/opus/1202857169563680835"
+        },
+        {
+          "label": "库街区帖子",
+          "url": "https://www.kurobbs.com/mc/post/1504923530928095232"
+        }
+      ],
+      "note": "本页文字基于官方公开介绍整理，具体请以游戏内实际内容为准。"
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "Denia",
+      "subtitle": "Startorch Academy Student · 5★ Fusion Resonator",
+      "affiliation": "Affiliation: Fractsidus",
+      "element": "Fusion",
+      "rarity": "5★",
+      "weapon": "Rectifier",
+      "quote": "Surprised to see me? Relax. I told you we'd meet again."
+    },
+    "sections": [
+      {
+        "title": "About Denia",
+        "cards": [
+          {
+            "heading": "Top Sleeper at Academy",
+            "text": "Denia is known for dozing off almost anywhere at Startorch Academy, yet she stays mild and composed when interrupted."
+          },
+          {
+            "heading": "Cafeteria Platinum Member",
+            "text": "She has clear taste preferences, but often appears very open to cafeteria products and has joined multiple promo shoots."
+          },
+          {
+            "heading": "\"Thesis Lifesaver\"",
+            "text": "Many students seek her help on Voidmatter topics. She often points out practical directions and data hints."
+          },
+          {
+            "heading": "Housework Expert?",
+            "text": "School check records suggest Denia consistently ranks high in room cleanliness."
+          }
+        ]
+      },
+      {
+        "title": "Style & Traits",
+        "cards": [
+          {
+            "heading": "Stylized Design",
+            "text": "Chains, gloves, and her doll are called \"stylized design\" by Denia, while her neck suppressor is simply \"rules\"."
+          },
+          {
+            "heading": "Perfect Smile",
+            "text": "Gentleness, friendliness, persuasion, plus a touch of laziness and playfulness define her signature smile."
+          },
+          {
+            "heading": "\"Trickster\"",
+            "text": "Her doll looks worn and patched by hand, unlike typical polished ornaments."
+          }
+        ]
+      },
+      {
+        "title": "Extra Profile",
+        "cards": [
+          {
+            "heading": "Precious Item · \"Dreammaker\"",
+            "text": "A device for creating giant bubbles. It looks dreamy and toy-like rather than purely weaponized."
+          },
+          {
+            "heading": "Denia's Preferences",
+            "text": "\"I like warm sweet food, hard-to-explain lectures, and obscure reference books.\""
+          },
+          {
+            "heading": "Denia's Story",
+            "text": "\"Her registered Resonance ability creates bubbles that isolate Voidmatter and provide protection.\""
+          },
+          {
+            "heading": "Inner Voice",
+            "text": "\"At least sometimes, try trusting me.\""
+          }
+        ]
+      }
+    ],
+    "sources": {
+      "title": "Sources",
+      "items": [
+        {
+          "label": "Bilibili Post",
+          "url": "https://www.bilibili.com/opus/1202857169563680835"
+        },
+        {
+          "label": "Kurobbs Post",
+          "url": "https://www.kurobbs.com/mc/post/1504923530928095232"
+        }
+      ],
+      "note": "Text is adapted from official public profile materials. In-game content prevails."
+    }
+  }
+}
